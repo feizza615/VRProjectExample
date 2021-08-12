@@ -9,7 +9,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <a-scene rain="count:20000; dropHeight: .25; dropRadius: .25; height: 10000; color: white; splash: false" cursor="rayOrigin:mouse">
+    <a-scene  change-tree-color rain="count:20000; dropHeight: .25; dropRadius: .25; height: 10000; color: white; splash: false" cursor="rayOrigin:mouse">
         <a-camera><a-cursor></a-cursor></a-camera>
         <!--Find 360 degree backgrounds here: https://www.flickr.com/groups/equirectangular/-->
        <a-sky src="https://live.staticflickr.com/4723/28171556989_b02fb644ec_o.jpg"></a-sky>
@@ -28,10 +28,10 @@
             <a-circle position = ".05 .85 1" color="black" radius =".03"></a-circle>
             <a-circle position = "-.05 .85 1" color="black" radius =".03"></a-circle>
             <a-circle position = "-.05 .85 1" color="black" radius =".03"></a-circle>
-            <a-dodecahedron color="white" radius=".5"> </a-dodecahedron>
+            <a-dodecahedron color="white" radius=".5" ></a-box>
+                > </a-dodecahedron>
             <a-dodecahedron position = "0 .5 0" color="white" radius=".4" cursor-listener></a-dodecahedron>
             <a-dodecahedron position = "0 1 0" color="white" radius=".3" change-color-on-hover></a-dodecahedron>
-        
         </a-entity>
 
 
