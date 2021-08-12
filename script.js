@@ -1,3 +1,5 @@
+
+//Component 1: This component grabs both cylinders (barks of the trees) and turns them purple
 AFRAME.registerComponent('change-tree-color',{
   init: function() {
     var sceneEl = document.querySelector('a-scene'); 
@@ -7,26 +9,32 @@ AFRAME.registerComponent('change-tree-color',{
   }
 });
 
+ //Copmonent 2: This component changes the color of the snowman 
+ AFRAME.registerComponent('change-color-on-hover', {
+  init: function () {
+    var snowHead = this.el;  // <a-box>
+
+    snowHead.addEventListener('mouseenter', function () {
+      snowHead.setAttribute('color', 'purple');
+    });
+
+    snowHead.addEventListener('mouseleave', function () {
+      snowHead.setAttribute('color', 'white');
+    });
+  }
+});
+
+//Component 3: This component changed the body of the snowman to a random color when it is clicked
 AFRAME.registerComponent('cursor-listener', {
     init: function () {
       var COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];
-      this.el.addEventListener('click', function (evt) {
+      var snowBody = this.el;
+      snowBody.addEventListener('click',function() {
         var randomIndex = Math.floor(Math.random() * COLORS.length);
-        this.setAttribute('material', 'color', COLORS[randomIndex]);
-        console.log('I was clicked at: ', evt.detail.intersection.point);
+        snowBody.setAttribute('material', {color:  COLORS[randomIndex]});
       });
     }
   });
-  AFRAME.registerComponent('change-color-on-hover', {
-    init: function () {
-      var el = this.el;  // <a-box>
 
-      el.addEventListener('mouseenter', function () {
-        el.setAttribute('color', 'purple');
-      });
+ 
 
-      el.addEventListener('mouseleave', function () {
-        el.setAttribute('color', 'white');
-      });
-    }
-  });
