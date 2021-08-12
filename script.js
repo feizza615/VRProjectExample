@@ -1,6 +1,6 @@
 AFRAME.registerComponent('cursor-listener', {
     init: function () {
-      var COLORS = ['red', 'green', 'blue'];
+      var COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];
       this.el.addEventListener('click', function (evt) {
           
         var randomIndex = Math.floor(Math.random() * COLORS.length);
@@ -18,7 +18,7 @@ AFRAME.registerComponent('cursor-listener', {
       });
 
       el.addEventListener('mouseleave', function () {
-        el.setAttribute('color', 'brown');
+        el.setAttribute('color', 'white');
       });
     }
   });
