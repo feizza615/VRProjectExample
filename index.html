@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My VR Project</title>
+
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <a-scene cursor="rayOrigin:mouse">
+        <a-camera><a-cursor></a-cursor></a-camera>
+        <!--Find 360 degree backgrounds here: https://www.flickr.com/groups/equirectangular/-->
+       <a-sky src="images/background.jpg"></a-sky>
+        <a-entity position="0 2.25 -15" particle-system="preset: snow; particle-count:1000"></a-entity>
+        <a-entity position="4 1 -5">
+            <a-cylinder radius="0.25" height="1" color="brown"  shadow></a-cylinder>
+            <a-cone position="0 1 0" radius-bottom=".75" radius-top="0" height="1.75" color="green" ></a-cone>
+        </a-entity>
+
+        <a-entity position="-3 1 -5">
+            <a-cylinder radius="0.25" height="1" color="brown" shadow></a-cylinder>
+            <a-cone position="0 1 0" radius-bottom=".75" radius-top="0" height="1.75" color="green"></a-cone>
+        </a-entity>
+
+        <!--SNOWMAN HERE: -->
+        <a-entity position="0 1 -2">
+            <a-circle position = ".05 .85 1" color="black" radius =".03"></a-circle>
+            <a-circle position = "-.05 .85 1" color="black" radius =".03"></a-circle>
+            <a-circle position = "-.05 .85 1" color="black" radius =".03"></a-circle>
+            <a-dodecahedron color="white" radius=".5"> </a-dodecahedron>
+            <a-dodecahedron position = "0 .5 0" color="white" radius=".4" cursor-listener></a-dodecahedron>
+            <a-dodecahedron position = "0 1 0" color="white" radius=".3" change-color-on-hover></a-dodecahedron>
+        
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>
